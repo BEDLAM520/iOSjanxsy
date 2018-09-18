@@ -9,7 +9,6 @@
 #import "VIMediaDownloader.h"
 #import "VIContentInfo.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "VICacheSessionManager.h"
 
 #import "VIMediaCacheWorker.h"
 #import "VICacheManager.h"
@@ -57,6 +56,7 @@ static NSInteger kBufferSize = 10 * 1024;
           dataTask:(NSURLSessionDataTask *)dataTask
 didReceiveResponse:(NSURLResponse *)response
  completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
+    NSLog(@"////////////22");
     [self.delegate URLSession:session dataTask:dataTask didReceiveResponse:response completionHandler:completionHandler];
 }
 
@@ -171,7 +171,7 @@ didCompleteWithError:(nullable NSError *)error {
 - (NSURLSession *)session {
     if (!_session) {
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self.sessionDelegateObject delegateQueue:[VICacheSessionManager shared].downloadQueue];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self.sessionDelegateObject delegateQueue:[NSOperationQueue mainQueue]];
         _session = session;
     }
     return _session;
@@ -214,6 +214,7 @@ didCompleteWithError:(nullable NSError *)error {
         self.startOffset = action.range.location;
         self.task = [self.session dataTaskWithRequest:request];
         [self.task resume];
+        NSLog(@"***! %@     %@      %d      %d",NSStringFromRange(action.range), range, fromOffset, endOffset);
     }
 }
 
@@ -258,16 +259,21 @@ didCompleteWithError:(nullable NSError *)error {
 didReceiveResponse:(NSURLResponse *)response
  completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler {
     NSString *mimeType = response.MIMEType;
+    NSLog(@"////////////33");
     // Only download video/audio data
     if ([mimeType rangeOfString:@"video/"].location == NSNotFound &&
         [mimeType rangeOfString:@"audio/"].location == NSNotFound &&
         [mimeType rangeOfString:@"application"].location == NSNotFound) {
+        NSLog(@"////////////44");
         completionHandler(NSURLSessionResponseCancel);
     } else {
+        NSLog(@"////////////55");
         if ([self.delegate respondsToSelector:@selector(actionWorker:didReceiveResponse:)]) {
+            NSLog(@"////////////66");
             [self.delegate actionWorker:self didReceiveResponse:response];
         }
         if (self.canSaveToCache) {
+            NSLog(@"////////////77");
             [self.cacheWorker startWritting];
         }
         completionHandler(NSURLSessionResponseAllow);
@@ -422,7 +428,7 @@ didCompleteWithError:(nullable NSError *)error {
     // ---
     self.downloadToEnd = YES;
     NSRange range = NSMakeRange(0, 2);
-    NSArray *actions = [self.cacheWorker cachedDataActionsForRange:range];
+    NSArray * actions = [self.cacheWorker cachedDataActionsForRange:range];
 
     self.actionWorker = [[VIActionWorker alloc] initWithActions:actions url:self.url cacheWorker:self.cacheWorker];
     self.actionWorker.canSaveToCache = self.saveToCache;
@@ -442,18 +448,21 @@ didCompleteWithError:(nullable NSError *)error {
 - (void)actionWorker:(VIActionWorker *)actionWorker didReceiveResponse:(NSURLResponse *)response {
     if (!self.info) {
         VIContentInfo *info = [VIContentInfo new];
-        
+        NSLog(@"////////////88");
         if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
             NSHTTPURLResponse *HTTPURLResponse = (NSHTTPURLResponse *)response;
             NSString *acceptRange = HTTPURLResponse.allHeaderFields[@"Accept-Ranges"];
             info.byteRangeAccessSupported = [acceptRange isEqualToString:@"bytes"];
             info.contentLength = [[[HTTPURLResponse.allHeaderFields[@"Content-Range"] componentsSeparatedByString:@"/"] lastObject] longLongValue];
+            
+            
+            NSLog(@"////////////99");
         }
         NSString *mimeType = response.MIMEType;
         CFStringRef contentType = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType, (__bridge CFStringRef)(mimeType), NULL);
         info.contentType = CFBridgingRelease(contentType);
         self.info = info;
-        
+        NSLog(@"contentInformationRequest   %@  %d  %d",info.contentType, info.contentLength, info.byteRangeAccessSupported);
         NSError *error;
         [self.cacheWorker setContentInfo:info error:&error];
         if (error) {

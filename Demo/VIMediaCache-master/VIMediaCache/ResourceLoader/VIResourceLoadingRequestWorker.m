@@ -37,7 +37,7 @@
 
 - (void)startWork {
     AVAssetResourceLoadingDataRequest *dataRequest = self.request.dataRequest;
-    
+    NSLog(@"initWithMediaDownloader     %@  %d  %d",self.request.contentInformationRequest.contentType, self.request.contentInformationRequest.contentLength, self.request.contentInformationRequest.isByteRangeAccessSupported);
     long long offset = dataRequest.requestedOffset;
     NSInteger length = dataRequest.requestedLength;
     if (dataRequest.currentOffset != 0) {
@@ -72,11 +72,13 @@
 
 - (void)fullfillContentInfo {
     AVAssetResourceLoadingContentInformationRequest *contentInformationRequest = self.request.contentInformationRequest;
+    NSLog(@"////////////11");
     if (self.mediaDownloader.info && !contentInformationRequest.contentType) {
         // Fullfill content information
         contentInformationRequest.contentType = self.mediaDownloader.info.contentType;
         contentInformationRequest.contentLength = self.mediaDownloader.info.contentLength;
         contentInformationRequest.byteRangeAccessSupported = self.mediaDownloader.info.byteRangeAccessSupported;
+        NSLog(@"/////////10101  %@  %llu    %d",self.mediaDownloader.info.contentType, self.mediaDownloader.info.contentLength, self.mediaDownloader.info.byteRangeAccessSupported);
     }
 }
 

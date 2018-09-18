@@ -9,10 +9,16 @@
 /* Begin PBXBuildFile section */
 		CE03638D213E85A60060B531 /* CacheAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03638C213E85A60060B531 /* CacheAction.swift */; };
 		CE03638F213E863B0060B531 /* MediaCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03638E213E863B0060B531 /* MediaCacheWorker.swift */; };
+		CE1CE9AB2142788500D1941B /* LoadingRequestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE9AA2142788500D1941B /* LoadingRequestTask.swift */; };
+		CE1CE9AD2147AE1A00D1941B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE9AC2147AE1A00D1941B /* Array+Extension.swift */; };
+		CE1CE9B0214B54E400D1941B /* LocalLoadDataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE9AF214B54E400D1941B /* LocalLoadDataHandle.swift */; };
+		CE1CE9B2214B68F400D1941B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE9B1214B68F400D1941B /* NSObject+Extension.swift */; };
 		CE42572C20F45FEE002ABC01 /* AVPlayerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42572B20F45FEE002ABC01 /* AVPlayerStatusView.swift */; };
 		CE42572E20F48F2E002ABC01 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42572D20F48F2E002ABC01 /* UIView+Extensions.swift */; };
 		CE52146B20F604C2007B8AB7 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52146A20F604C2007B8AB7 /* AVPlayerView.swift */; };
 		CE52146D20F608CD007B8AB7 /* AVPlayerOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52146C20F608CD007B8AB7 /* AVPlayerOperationView.swift */; };
+		CE57BBBF214FA5AA001D4B19 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57BBBE214FA5AA001D4B19 /* String+Extension.swift */; };
+		CE57BBC1214FA7AF001D4B19 /* CacheConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57BBC0214FA7AF001D4B19 /* CacheConfiguration.swift */; };
 		CE659B3A2085A117003528E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE659B392085A117003528E9 /* AppDelegate.swift */; };
 		CE659B3C2085A117003528E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE659B3B2085A117003528E9 /* ViewController.swift */; };
 		CE659B3F2085A117003528E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE659B3D2085A117003528E9 /* Main.storyboard */; };
@@ -47,10 +53,16 @@
 /* Begin PBXFileReference section */
 		CE03638C213E85A60060B531 /* CacheAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAction.swift; sourceTree = "<group>"; };
 		CE03638E213E863B0060B531 /* MediaCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCacheWorker.swift; sourceTree = "<group>"; };
+		CE1CE9AA2142788500D1941B /* LoadingRequestTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingRequestTask.swift; sourceTree = "<group>"; };
+		CE1CE9AC2147AE1A00D1941B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		CE1CE9AF214B54E400D1941B /* LocalLoadDataHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLoadDataHandle.swift; sourceTree = "<group>"; };
+		CE1CE9B1214B68F400D1941B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		CE42572B20F45FEE002ABC01 /* AVPlayerStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerStatusView.swift; sourceTree = "<group>"; };
 		CE42572D20F48F2E002ABC01 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CE52146A20F604C2007B8AB7 /* AVPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		CE52146C20F608CD007B8AB7 /* AVPlayerOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerOperationView.swift; sourceTree = "<group>"; };
+		CE57BBBE214FA5AA001D4B19 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		CE57BBC0214FA7AF001D4B19 /* CacheConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheConfiguration.swift; sourceTree = "<group>"; };
 		CE659B362085A117003528E9 /* AVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE659B392085A117003528E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE659B3B2085A117003528E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,13 +108,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE036389213E61670060B531 /* New Group */ = {
+		CE036389213E61670060B531 /* VM */ = {
 			isa = PBXGroup;
 			children = (
 				CE03638C213E85A60060B531 /* CacheAction.swift */,
 				CE03638E213E863B0060B531 /* MediaCacheWorker.swift */,
+				CE57BBC0214FA7AF001D4B19 /* CacheConfiguration.swift */,
 			);
-			path = "New Group";
+			path = VM;
+			sourceTree = "<group>";
+		};
+		CE1CE9AE214B54C300D1941B /* Load */ = {
+			isa = PBXGroup;
+			children = (
+				CE1CE9AF214B54E400D1941B /* LocalLoadDataHandle.swift */,
+			);
+			path = Load;
 			sourceTree = "<group>";
 		};
 		CE659B2D2085A117003528E9 = {
@@ -162,6 +183,9 @@
 			children = (
 				CE42572D20F48F2E002ABC01 /* UIView+Extensions.swift */,
 				CE95CD2320F749000053B08E /* URL+Extention.swift */,
+				CE1CE9AC2147AE1A00D1941B /* Array+Extension.swift */,
+				CE1CE9B1214B68F400D1941B /* NSObject+Extension.swift */,
+				CE57BBBE214FA5AA001D4B19 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -188,12 +212,14 @@
 		CE870C40213CE49300658008 /* PHAVPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				CE036389213E61670060B531 /* New Group */,
+				CE1CE9AE214B54C300D1941B /* Load */,
+				CE036389213E61670060B531 /* VM */,
 				CE659B692085A870003528E9 /* PlayerViewController.swift */,
 				CE42572B20F45FEE002ABC01 /* AVPlayerStatusView.swift */,
 				CE52146A20F604C2007B8AB7 /* AVPlayerView.swift */,
 				CE52146C20F608CD007B8AB7 /* AVPlayerOperationView.swift */,
 				CE659B6A2085A870003528E9 /* PlayerViewController.xib */,
+				CE1CE9AA2142788500D1941B /* LoadingRequestTask.swift */,
 			);
 			path = PHAVPlayer;
 			sourceTree = "<group>";
@@ -333,15 +359,21 @@
 				CE03638D213E85A60060B531 /* CacheAction.swift in Sources */,
 				CE74738920F5F1A100CCD0BC /* TimeFormat.swift in Sources */,
 				CE42572E20F48F2E002ABC01 /* UIView+Extensions.swift in Sources */,
+				CE1CE9B2214B68F400D1941B /* NSObject+Extension.swift in Sources */,
+				CE1CE9B0214B54E400D1941B /* LocalLoadDataHandle.swift in Sources */,
 				CE03638F213E863B0060B531 /* MediaCacheWorker.swift in Sources */,
 				CE870C3E213CD88A00658008 /* Common.swift in Sources */,
 				CE42572C20F45FEE002ABC01 /* AVPlayerStatusView.swift in Sources */,
+				CE57BBBF214FA5AA001D4B19 /* String+Extension.swift in Sources */,
 				CE95CD2420F749000053B08E /* URL+Extention.swift in Sources */,
 				CE659B3C2085A117003528E9 /* ViewController.swift in Sources */,
 				CE52146B20F604C2007B8AB7 /* AVPlayerView.swift in Sources */,
 				CE52146D20F608CD007B8AB7 /* AVPlayerOperationView.swift in Sources */,
+				CE57BBC1214FA7AF001D4B19 /* CacheConfiguration.swift in Sources */,
 				CE659B3A2085A117003528E9 /* AppDelegate.swift in Sources */,
+				CE1CE9AD2147AE1A00D1941B /* Array+Extension.swift in Sources */,
 				CE659B6B2085A870003528E9 /* PlayerViewController.swift in Sources */,
+				CE1CE9AB2142788500D1941B /* LoadingRequestTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

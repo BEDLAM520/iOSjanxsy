@@ -17,4 +17,15 @@ enum CacheActionType {
 struct CacheAction {
     var actionType: CacheActionType
     var range: NSRange
+    
+    func isEqual(_ action: CacheAction) -> Bool {
+        if !NSEqualRanges(range, action.range) {
+            return false
+        }
+        
+        if action.actionType != self.actionType {
+            return false
+        }
+        return true
+    }
 }

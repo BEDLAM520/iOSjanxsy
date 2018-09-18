@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import MobileCoreServices
 
 let kCacheScheme = "__VIMediaCache___:"
 let kPackageLength = 204800 // 200kb per package
@@ -22,28 +23,30 @@ let VIMediaCacheErrorDoamin = "com.vimediacache"
 }
 
 class AVPlayerView: UIView {
-
+    
     weak var delegate: AVPlayerViewDelegate?
     var player: AVPlayer?
     var playerItem: AVPlayerItem?
     var playerLayer: AVPlayerLayer?
     var periodicTimeObserver: Any?
-
+    
     var session: URLSession?
     var task: URLSessionDataTask?
-
-    
+    var requestTask: LoadingRequestTask?
+    var requestList = [AVAssetResourceLoadingRequest]()
+    var seekRequired = false
+    var cacheFinished = false
     //////
     var originUrlStr: String?
     
     
     init(frame: CGRect, urlString: String) {
         super.init(frame: frame)
-
+        
         guard let videoUrl = URL(string: urlString)?.streamingSchemeURL else {
             return
         }
-
+        
         let urlAsset = AVURLAsset(url: videoUrl, options:nil)
         urlAsset.resourceLoader.setDelegate(self, queue: DispatchQueue.main)
         playerItem = AVPlayerItem(asset: urlAsset)
@@ -57,19 +60,19 @@ class AVPlayerView: UIView {
         self.layer.addSublayer(layer)
         playerLayer = layer
         player?.play()
-
+        
         playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: .new, context: nil)
         playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.loadedTimeRanges), options: .new, context: nil)
         playerItem?.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.isPlaybackBufferEmpty), options: .new, context: nil)
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(playToEnd(noti:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     deinit {
         playerItem?.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.status))
         playerItem?.removeObserver(self, forKeyPath: #keyPath(AVPlayerItem.isPlaybackBufferEmpty))
@@ -81,7 +84,7 @@ class AVPlayerView: UIView {
         player?.removeTimeObserver(periodicTimeObserver)
         printLog("denit \(self)")
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         playerLayer?.frame = bounds
@@ -92,9 +95,9 @@ extension AVPlayerView {
     @objc func playToEnd(noti: Notification) {
         printLog("------end")
     }
-
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-
+        
         // Only handle observations for the playerItemContext
         guard let playerItem = object as? AVPlayerItem else {
             super.observeValue(forKeyPath: keyPath,
@@ -103,7 +106,7 @@ extension AVPlayerView {
                                context: nil)
             return
         }
-
+        
         if keyPath == #keyPath(AVPlayerItem.status) {
             switch playerItem.status {
             case .readyToPlay:
@@ -114,10 +117,9 @@ extension AVPlayerView {
                 periodicTimeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: {[weak self] (time) in
                     self?.delegate?.AVPlayerViewDidChangeCurrentTime(time: playerItem.currentTime())
                 })
-
             case .failed:
                 let error = playerItem.error
-                printLog(error?.localizedDescription)
+                printLog("\(error?.localizedDescription)  \(error)")
             case .unknown:
                 printLog("player unknown")
             }
@@ -142,7 +144,7 @@ extension AVPlayerView {
             player?.play()
         }
     }
-
+    
     func playerSeek(time: CMTime, completion: @escaping (()->())) {
         player?.seek(to: time, completionHandler: { (finished) in
             if finished {
@@ -154,62 +156,19 @@ extension AVPlayerView {
 }
 
 extension AVPlayerView: AVAssetResourceLoaderDelegate {
-
-    func resourceLoader(_ resourceLoader: AVAssetResourceLoader, shouldWaitForResponseTo authenticationChallenge: URLAuthenticationChallenge) -> Bool {
-        printLog("-----1")
-        return true
-    }
-
-    func resourceLoader(_ resourceLoader: AVAssetResourceLoader, didCancel authenticationChallenge: URLAuthenticationChallenge) {
-        printLog("-----2")
-    }
-
-    func resourceLoader(_ resourceLoader: AVAssetResourceLoader, shouldWaitForRenewalOfRequestedResource renewalRequest: AVAssetResourceRenewalRequest) -> Bool {
-        printLog("-----3")
-        return true
-    }
-
     func resourceLoader(_ resourceLoader: AVAssetResourceLoader, didCancel loadingRequest: AVAssetResourceLoadingRequest) {
-        printLog("---cancel   \(loadingRequest.dataRequest?.requestedOffset)    \(loadingRequest.dataRequest?.currentOffset)  \(loadingRequest.dataRequest?.requestedLength)")
+        printLog("---didCancel   \(loadingRequest.dataRequest?.requestedOffset)    \(loadingRequest.dataRequest?.currentOffset)  \(loadingRequest.dataRequest?.requestedLength)")
+        requestList.remove(loadingRequest)
     }
-
+    
     func resourceLoader(_ resourceLoader: AVAssetResourceLoader, shouldWaitForLoadingOfRequestedResource loadingRequest: AVAssetResourceLoadingRequest) -> Bool {
-        printLog("---wait   \(loadingRequest.dataRequest?.requestedOffset)    \(loadingRequest.dataRequest?.currentOffset)  \(loadingRequest.dataRequest?.requestedLength)")
-
-//        guard let resourceURL = loadingRequest.request.url else {
-//                return true
-//        }
-//
-//        if resourceURL.absoluteString.hasPrefix(kCacheScheme) {
-//            if originUrlStr == nil {
-//               originUrlStr = resourceURL.absoluteString.replacingOccurrences(of: kCacheScheme, with: "")
-//            }
-//
-//            guard let dataRequest = loadingRequest.dataRequest else {
-//                return false
-//            }
-//
-//            var offset = dataRequest.requestedOffset
-//            let length = dataRequest.requestedLength
-//
-//            if dataRequest.currentOffset != 0 {
-//                offset = dataRequest.currentOffset
-//            }
-//
-//            let toEnd = dataRequest.requestsAllDataToEndOfResource == true
-//            printLog("\(offset)   \(length)   \(dataRequest.currentOffset)     \(dataRequest.requestedOffset)   \(toEnd)")
-//
-//            let range = NSRange(location: Int(offset), length: length)
-//            if toEnd {
-//
-//            }
-//
-//            cacheDataAction(range)
-//        }
-
+        printLog("---shouldWait   \(loadingRequest.dataRequest?.requestedOffset)    \(loadingRequest.dataRequest?.currentOffset)  \(loadingRequest.dataRequest?.requestedLength)")
+        addLoadingRequest(loadingRequest)
         return true
     }
-
+    
+    
+    
     func cacheDataAction(_ range: NSRange) {
         
         if range.location == NSNotFound {
@@ -247,36 +206,149 @@ extension AVPlayerView: AVAssetResourceLoaderDelegate {
     }
 }
 
-extension AVPlayerView {
-    func start(url: URL, requestOffset: Int64, fileLength: Int) {
-        var request = URLRequest(url: url.httpSchemeURL, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
-        if requestOffset > 0 {
-            request.addValue("bytes=\(requestOffset)-\(fileLength)", forHTTPHeaderField: "Range")
+extension AVPlayerView: LoadingRequestTaskDelegate {
+    func stopLoading() {
+        self.requestTask?.cancel = true
+    }
+    
+    func addLoadingRequest(_ loadingRequest: AVAssetResourceLoadingRequest) {
+        requestList.append(loadingRequest)
+        printLog("request list count    \(requestList.count)")
+        synchronized(lock: self) {
+            if self.requestTask != nil {
+                if let requestTask = self.requestTask,
+                    let requestedOffset = loadingRequest.dataRequest?.requestedOffset {
+                    if  requestedOffset >= requestTask.requestOffset
+                        && requestedOffset <= requestTask.requestOffset + requestTask.cacheLength {
+                        printLog("----1")
+                        self.processRequestList()
+                    } else {
+                        printLog("----2")
+                        if self.seekRequired {
+                            printLog("----3")
+                            self.newTaskWith(loadingRequest, false)
+                        }
+                    }
+                }
+            } else {
+                printLog("----4")
+                self.newTaskWith(loadingRequest, true)
+            }
         }
-        session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue.main)
-        task = session?.dataTask(with: request)
-        task?.resume()
     }
-}
-
-extension AVPlayerView: URLSessionDataDelegate {
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
-        completionHandler(.allow)
-
-        guard let httpReponse = response as? HTTPURLResponse else {
-            return
+    
+    func newTaskWith(_ loadingRequest: AVAssetResourceLoadingRequest, _ cache: Bool) {
+        var fileLength = 0
+        if let task = requestTask {
+            fileLength = Int(task.fileLength)
+            task.cancel = true
         }
-        printLog(httpReponse)
-        let contentRange = httpReponse.allHeaderFields["Content-Range"]
-
-        printLog(contentRange)
+        
+        requestTask = LoadingRequestTask()
+        requestTask?.url = loadingRequest.request.url
+        if let requestedOffset = loadingRequest.dataRequest?.requestedOffset {
+            requestTask?.requestOffset = Int64(requestedOffset)
+        }
+        requestTask?.cache = cache
+        if fileLength > 0 {
+            requestTask?.fileLength = Int64(fileLength)
+        }
+        requestTask?.delegate = self
+        requestTask?.start()
+        seekRequired = false
     }
+    
+    func processRequestList() {
+        var finishRequestList = [AVAssetResourceLoadingRequest]()
+        for item in requestList {
+            if finishLoadingWith(item) {
+                finishRequestList.append(item)
+            }
+        }
 
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        printLog(data)
+        requestList.removeObjectsIn(finishRequestList)
     }
-
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        printLog(error)
+    
+    func finishLoadingWith(_ loadingRequest: AVAssetResourceLoadingRequest) -> Bool {
+        
+        guard let requestedOffset = loadingRequest.dataRequest?.requestedOffset,
+            let currentOffset = loadingRequest.dataRequest?.currentOffset,
+            let requestedLength = loadingRequest.dataRequest?.requestedLength,
+            let task = requestTask else {
+                return false
+        }
+        
+//        if let contentType = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType,
+//                                                                   "video/mp4" as CFString,
+//                                                                   nil)?.takeRetainedValue() as String? {
+            loadingRequest.contentInformationRequest?.contentLength = task.fileLength
+//            loadingRequest.contentInformationRequest?.contentType = contentType
+            loadingRequest.contentInformationRequest?.contentType = "public.mpeg-4"
+            loadingRequest.contentInformationRequest?.isByteRangeAccessSupported = true
+//        }
+        
+        var rOffset = requestedOffset
+        let cacheLength = task.cacheLength
+        if currentOffset != 0 {
+            rOffset = currentOffset
+        }
+//        printLog("data      \(loadingRequest)")
+        let  canReadLength = cacheLength - (rOffset - task.requestOffset)
+        let respondLength = min(canReadLength, Int64(requestedLength))
+        printLog("---offset  \(rOffset)   \(task.requestOffset)   \(respondLength)")
+        if let data = LocalLoadDataHandle.readTempFile(dataOffset: rOffset - task.requestOffset, dataLength: respondLength) {
+            loadingRequest.dataRequest?.respond(with: data)
+        }
+        
+        let nowEndOffset = rOffset + canReadLength
+        let reqEndOffset = requestedOffset + Int64(requestedLength)
+        if nowEndOffset >= reqEndOffset {
+            printLog("finish loading")
+            loadingRequest.finishLoading()
+            return true
+        }
+        return false
+    }
+    
+    
+    ////////  MARK   ////////
+    func LoadingRequestTaskDidReciveData() {
+        processRequestList()
+    }
+    
+    func LoadingRequestTaskDidComplete(_ isCahce: Bool) {
+        cacheFinished = isCahce
+    }
+    
+    func LoadingRequestTaskFail(_ error: Error?) {
+        printLog(error?.localizedDescription)
+    }
+    
+    func LoadingRequestTaskDidResponse(_ response: URLResponse) {
+//        if let mimeType = response.mimeType {
+//            for request in requestList {
+////                printLog("response mime     \(request)")
+//                // FIXME: Int长度范围和视频的长度范围
+//                // Content-Length type is NSTaggedPointerString
+//                if let httpResponse = response as? HTTPURLResponse,
+//                    let acceptRange = httpResponse.allHeaderFields["Accept-Ranges"] as? String,
+//                    let contentLengthObj = httpResponse.allHeaderFields["Content-Range"] as? String,
+//                    let contentLengthStr = contentLengthObj.components(separatedBy: "/").last,
+//                    let contentLength = CLongLong("\(contentLengthStr)"),
+//                    let contentType = UTTypeCreatePreferredIdentifierForTag(kUTTagClassMIMEType,
+//                                                                            mimeType as CFString,
+//                                                                            nil)?.takeRetainedValue() as String?
+//                {
+//                    let isByteRangeAccessSupported = acceptRange == "bytes"
+//
+//                    self.requestTask?.fileLength = contentLength
+//                    request.contentInformationRequest?.contentLength = contentLength
+//                    request.contentInformationRequest?.contentType = contentType
+//                    request.contentInformationRequest?.isByteRangeAccessSupported = isByteRangeAccessSupported
+//                    printLog("contentInformationRequest  \(contentType)  \(contentLength) \(isByteRangeAccessSupported)  \(isByteRangeAccessSupported)    \(contentLengthObj) \(contentLength)")
+//                }
+//
+//            }
+//        }
     }
 }
