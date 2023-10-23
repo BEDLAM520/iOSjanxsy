@@ -46,17 +46,17 @@ class NGCircleSlider: UIControl {
         let context = UIGraphicsGetCurrentContext()
         
         // backgroud
-//        context?.addArc(center: startCenter, radius: circleRadius, startAngle: CGFloat(M_PI), endAngle: CGFloat(M_PI) * 2.0, clockwise: false)
-//        RGBA(240, 240, 240, 1).setStroke()
-//        context?.setLineWidth(lineWidth)
-//        context?.setLineCap(.round)
-//        context?.drawPath(using: .stroke)
-//
-//
-//        // progress
-//        context?.addArc(center: startCenter, radius: circleRadius, startAngle: CGFloat(M_PI), endAngle: ToRad(), clockwise: false)
-//        APPMainColor.setStroke()
-//        context?.drawPath(using: .stroke)
+        context?.addArc(center: startCenter, radius: circleRadius, startAngle: CGFloat(M_PI), endAngle: CGFloat(M_PI) * 2.0, clockwise: false)
+        RGBA(240, 240, 240, 1).setStroke()
+        context?.setLineWidth(lineWidth)
+        context?.setLineCap(.round)
+        context?.drawPath(using: .stroke)
+
+
+        // progress
+        context?.addArc(center: startCenter, radius: circleRadius, startAngle: CGFloat(M_PI), endAngle: ToRad(), clockwise: false)
+        APPMainColor.setStroke()
+        context?.drawPath(using: .stroke)
         
         // image
         let ballCenter = pointFromAngle()

@@ -17,7 +17,6 @@
 		56ACF84F2AE64E5F00B4C0F3 /* NGRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF82F2AE64E5C00B4C0F3 /* NGRequestTool.swift */; };
 		56ACF8532AE64E5F00B4C0F3 /* NGOpaqueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8332AE64E5D00B4C0F3 /* NGOpaqueNavigationController.swift */; };
 		56ACF8542AE64E5F00B4C0F3 /* NGCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */; };
-		56ACF8552AE64E5F00B4C0F3 /* NGCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8352AE64E5D00B4C0F3 /* NGCommon.swift */; };
 		56ACF8572AE64E5F00B4C0F3 /* NGRequestURLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8372AE64E5E00B4C0F3 /* NGRequestURLList.swift */; };
 		56ACF8582AE64E5F00B4C0F3 /* NGJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */; };
 		56ACF8692AE6513E00B4C0F3 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF85D2AE6513E00B4C0F3 /* Array+Extensions.swift */; };
@@ -37,6 +36,9 @@
 		56ACF8832AE6592400B4C0F3 /* XEBDefineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF87E2AE6592400B4C0F3 /* XEBDefineHelper.swift */; };
 		56ACF8862AE65B6900B4C0F3 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8842AE65B6800B4C0F3 /* UIImage+Extensions.swift */; };
 		56ACF8872AE65B6900B4C0F3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8852AE65B6900B4C0F3 /* UIView+Extensions.swift */; };
+		56ACF8892AE66D1000B4C0F3 /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8882AE66D1000B4C0F3 /* NSMutableAttributedString+Extensions.swift */; };
+		56ACF88B2AE66DA200B4C0F3 /* URL+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF88A2AE66DA200B4C0F3 /* URL+Extention.swift */; };
+		56ACF88D2AE6717500B4C0F3 /* NGCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF88C2AE6717500B4C0F3 /* NGCommon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +75,6 @@
 		56ACF82F2AE64E5C00B4C0F3 /* NGRequestTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGRequestTool.swift; sourceTree = SOURCE_ROOT; };
 		56ACF8332AE64E5D00B4C0F3 /* NGOpaqueNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGOpaqueNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGCircleSlider.swift; sourceTree = SOURCE_ROOT; };
-		56ACF8352AE64E5D00B4C0F3 /* NGCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGCommon.swift; sourceTree = SOURCE_ROOT; };
 		56ACF8372AE64E5E00B4C0F3 /* NGRequestURLList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGRequestURLList.swift; sourceTree = SOURCE_ROOT; };
 		56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGJsonModel.swift; sourceTree = SOURCE_ROOT; };
 		56ACF85D2AE6513E00B4C0F3 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
@@ -93,6 +94,9 @@
 		56ACF87E2AE6592400B4C0F3 /* XEBDefineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEBDefineHelper.swift; sourceTree = "<group>"; };
 		56ACF8842AE65B6800B4C0F3 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		56ACF8852AE65B6900B4C0F3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		56ACF8882AE66D1000B4C0F3 /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
+		56ACF88A2AE66DA200B4C0F3 /* URL+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extention.swift"; sourceTree = "<group>"; };
+		56ACF88C2AE6717500B4C0F3 /* NGCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NGCommon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +130,6 @@
 				56ACF8792AE658FC00B4C0F3 /* Common */,
 				56ACF85C2AE6513E00B4C0F3 /* Extensions */,
 				56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */,
-				56ACF8352AE64E5D00B4C0F3 /* NGCommon.swift */,
 				56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */,
 				56ACF8332AE64E5D00B4C0F3 /* NGOpaqueNavigationController.swift */,
 				56ACF82F2AE64E5C00B4C0F3 /* NGRequestTool.swift */,
@@ -182,6 +185,8 @@
 		56ACF85C2AE6513E00B4C0F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				56ACF88A2AE66DA200B4C0F3 /* URL+Extention.swift */,
+				56ACF8882AE66D1000B4C0F3 /* NSMutableAttributedString+Extensions.swift */,
 				56ACF8752AE6573F00B4C0F3 /* String+Extensions.swift */,
 				56ACF85D2AE6513E00B4C0F3 /* Array+Extensions.swift */,
 				56ACF8612AE6513E00B4C0F3 /* UIColor+Extensions.swift */,
@@ -206,6 +211,7 @@
 				56ACF87C2AE6592300B4C0F3 /* XEBControl.swift */,
 				56ACF87E2AE6592400B4C0F3 /* XEBDefineHelper.swift */,
 				56ACF87A2AE6592300B4C0F3 /* XEBHelper.swift */,
+				56ACF88C2AE6717500B4C0F3 /* NGCommon.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -346,14 +352,15 @@
 				56ACF8832AE6592400B4C0F3 /* XEBDefineHelper.swift in Sources */,
 				56ACF8702AE6513E00B4C0F3 /* UIBarButtonItem+Extensions.swift in Sources */,
 				56ACF8812AE6592400B4C0F3 /* XEBControl.swift in Sources */,
-				56ACF8552AE64E5F00B4C0F3 /* NGCommon.swift in Sources */,
 				5635F13C2AE642EE00D70E15 /* ViewController.swift in Sources */,
 				56ACF8762AE6573F00B4C0F3 /* String+Extensions.swift in Sources */,
+				56ACF8892AE66D1000B4C0F3 /* NSMutableAttributedString+Extensions.swift in Sources */,
 				56ACF8822AE6592400B4C0F3 /* GZCommon.swift in Sources */,
 				5635F1382AE642ED00D70E15 /* AppDelegate.swift in Sources */,
 				56ACF84F2AE64E5F00B4C0F3 /* NGRequestTool.swift in Sources */,
 				56ACF86D2AE6513E00B4C0F3 /* UIColor+Extensions.swift in Sources */,
 				56ACF8582AE64E5F00B4C0F3 /* NGJsonModel.swift in Sources */,
+				56ACF88B2AE66DA200B4C0F3 /* URL+Extention.swift in Sources */,
 				56ACF86F2AE6513E00B4C0F3 /* NSObject+Extensions.swift in Sources */,
 				56ACF8532AE64E5F00B4C0F3 /* NGOpaqueNavigationController.swift in Sources */,
 				5635F13A2AE642ED00D70E15 /* SceneDelegate.swift in Sources */,
@@ -366,6 +373,7 @@
 				56ACF87F2AE6592400B4C0F3 /* XEBHelper.swift in Sources */,
 				56ACF8572AE64E5F00B4C0F3 /* NGRequestURLList.swift in Sources */,
 				56ACF8722AE6513E00B4C0F3 /* NotificationCenter+Extensions.swift in Sources */,
+				56ACF88D2AE6717500B4C0F3 /* NGCommon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -516,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
