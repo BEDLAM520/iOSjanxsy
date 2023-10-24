@@ -1,9 +1,4 @@
 //
-//  GZLoanBtn.swift
-//  Loan123
-//
-//  Created by Jason on 2016/12/30.
-//  Copyright © 2016年 Jason. All rights reserved.
 //
 
 import UIKit

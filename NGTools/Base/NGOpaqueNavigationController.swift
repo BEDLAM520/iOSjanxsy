@@ -1,9 +1,4 @@
 //
-//  NGOpaqueNavigationController.swift
-//  Loan123
-//
-//  Created by  user on 2017/12/13.
-//  Copyright © 2017年 Spring. All rights reserved.
 //
 
 import UIKit

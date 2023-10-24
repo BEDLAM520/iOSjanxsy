@@ -1,9 +1,4 @@
 //
-//  ZEBControl.swift
-//  Loan123
-//
-//  Created by seirra on 2017/11/3.
-//  Copyright © 2017年 Jason. All rights reserved.
 //
 
 import UIKit

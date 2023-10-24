@@ -1,9 +1,5 @@
 //
 //  NGCircleSlider.swift
-//  CircleSlider
-//
-//  Created by liaonaigang on 2017/12/29.
-//  Copyright © 2017年 ngliao. All rights reserved.
 //
 
 import UIKit

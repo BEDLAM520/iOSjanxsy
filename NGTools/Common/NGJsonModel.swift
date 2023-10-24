@@ -1,9 +1,5 @@
 //
 //  NGJsonModel.swift
-//  Loan123
-//
-//  Created by liaonaigang on 2017/12/24.
-//  Copyright © 2017年 Spring. All rights reserved.
 //
 
 

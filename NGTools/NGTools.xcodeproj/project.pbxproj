@@ -14,10 +14,33 @@
 		5635F1442AE6437900D70E15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5635F1422AE6437900D70E15 /* LaunchScreen.storyboard */; };
 		5635F14F2AE6438500D70E15 /* NGToolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635F14E2AE6438500D70E15 /* NGToolsTests.swift */; };
 		5635F15A2AE6438600D70E15 /* NGToolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635F1592AE6438600D70E15 /* NGToolsUITests.swift */; };
-		56ACF84F2AE64E5F00B4C0F3 /* NGRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF82F2AE64E5C00B4C0F3 /* NGRequestTool.swift */; };
-		56ACF8532AE64E5F00B4C0F3 /* NGOpaqueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8332AE64E5D00B4C0F3 /* NGOpaqueNavigationController.swift */; };
+		5667FC6B277FD40200DE6848 /* Control+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC6A277FD40200DE6848 /* Control+Extensions.swift */; };
+		5667FC70277FD67400DE6848 /* XMLParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC6F277FD67400DE6848 /* XMLParserManager.swift */; };
+		5667FC72277FD6AF00DE6848 /* SDENavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC71277FD6AF00DE6848 /* SDENavigationDelegate.swift */; };
+		5667FC74277FD6FB00DE6848 /* LoopBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC73277FD6FB00DE6848 /* LoopBannerView.swift */; };
+		5667FC76277FD8D100DE6848 /* NGSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC75277FD8D100DE6848 /* NGSQLiteManager.swift */; };
+		5667FC7B277FD9AD00DE6848 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC7A277FD9AD00DE6848 /* DispatchQueue+Extensions.swift */; };
+		5667FC84277FDDA400DE6848 /* NGRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC83277FDDA400DE6848 /* NGRequestTool.swift */; };
+		5667FC86277FDE2600DE6848 /* GZHttpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC85277FDE2600DE6848 /* GZHttpTool.swift */; };
+		5667FC88277FDF7800DE6848 /* NGSingletonObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FC87277FDF7800DE6848 /* NGSingletonObj.swift */; };
+		5667FCAB277FE7B800DE6848 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCAA277FE7B800DE6848 /* BaseViewController.swift */; };
+		5667FCB0277FE85A00DE6848 /* NGOpaqueBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCAC277FE84500DE6848 /* NGOpaqueBarViewController.swift */; };
+		5667FCB1277FE85A00DE6848 /* NGOpaqueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCAD277FE84C00DE6848 /* NGOpaqueViewController.swift */; };
+		5667FCB2277FE85A00DE6848 /* NGBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCAE277FE85200DE6848 /* NGBaseViewController.swift */; };
+		5667FCB3277FE85A00DE6848 /* NGOpaqueNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCAF277FE85900DE6848 /* NGOpaqueNavigationController.swift */; };
+		5667FCB5277FE96000DE6848 /* XEBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCB4277FE95F00DE6848 /* XEBTabBarViewController.swift */; };
+		5667FCB7277FE96C00DE6848 /* NGWKWebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCB6277FE96C00DE6848 /* NGWKWebViewVC.swift */; };
+		5667FCCA277FEA0B00DE6848 /* NSCalendar+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCBD277FEA0B00DE6848 /* NSCalendar+Extension.m */; };
+		5667FCCB277FEA0B00DE6848 /* UIPickerView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCBE277FEA0B00DE6848 /* UIPickerView+Extension.m */; };
+		5667FCCC277FEA0B00DE6848 /* NSString+CZPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCBF277FEA0B00DE6848 /* NSString+CZPath.m */; };
+		5667FCCD277FEA0B00DE6848 /* GZValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCC1277FEA0B00DE6848 /* GZValidate.m */; };
+		5667FCCE277FEA0B00DE6848 /* UIButton+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCC2277FEA0B00DE6848 /* UIButton+CZAddition.m */; };
+		5667FCCF277FEA0B00DE6848 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCC3277FEA0B00DE6848 /* UIViewController+CZAddition.m */; };
+		5667FCD0277FEA0B00DE6848 /* NSString+CZHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCC4277FEA0B00DE6848 /* NSString+CZHash.m */; };
+		5667FCD1277FEA0B00DE6848 /* NSAttributedString+CZAdditon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCC7277FEA0B00DE6848 /* NSAttributedString+CZAdditon.m */; };
+		5667FCDE277FEAE200DE6848 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = 5667FCD7277FEADC00DE6848 /* CityList.json */; };
+		5667FCE0277FEAE200DE6848 /* NGPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667FCD9277FEADC00DE6848 /* NGPickerView.swift */; };
 		56ACF8542AE64E5F00B4C0F3 /* NGCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */; };
-		56ACF8572AE64E5F00B4C0F3 /* NGRequestURLList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8372AE64E5E00B4C0F3 /* NGRequestURLList.swift */; };
 		56ACF8582AE64E5F00B4C0F3 /* NGJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */; };
 		56ACF8692AE6513E00B4C0F3 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF85D2AE6513E00B4C0F3 /* Array+Extensions.swift */; };
 		56ACF86D2AE6513E00B4C0F3 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ACF8612AE6513E00B4C0F3 /* UIColor+Extensions.swift */; };
@@ -72,11 +95,43 @@
 		5635F1552AE6438600D70E15 /* NGToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NGToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5635F1592AE6438600D70E15 /* NGToolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NGToolsUITests.swift; sourceTree = "<group>"; };
 		5635F15B2AE6438700D70E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56ACF82F2AE64E5C00B4C0F3 /* NGRequestTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGRequestTool.swift; sourceTree = SOURCE_ROOT; };
-		56ACF8332AE64E5D00B4C0F3 /* NGOpaqueNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGOpaqueNavigationController.swift; sourceTree = SOURCE_ROOT; };
-		56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGCircleSlider.swift; sourceTree = SOURCE_ROOT; };
-		56ACF8372AE64E5E00B4C0F3 /* NGRequestURLList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGRequestURLList.swift; sourceTree = SOURCE_ROOT; };
-		56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGJsonModel.swift; sourceTree = SOURCE_ROOT; };
+		5667FC6A277FD40200DE6848 /* Control+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Control+Extensions.swift"; sourceTree = "<group>"; };
+		5667FC6F277FD67400DE6848 /* XMLParserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParserManager.swift; sourceTree = "<group>"; };
+		5667FC71277FD6AF00DE6848 /* SDENavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDENavigationDelegate.swift; sourceTree = "<group>"; };
+		5667FC73277FD6FB00DE6848 /* LoopBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoopBannerView.swift; path = "../New Group/LoopBannerView.swift"; sourceTree = "<group>"; };
+		5667FC75277FD8D100DE6848 /* NGSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGSQLiteManager.swift; sourceTree = "<group>"; };
+		5667FC7A277FD9AD00DE6848 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
+		5667FC83277FDDA400DE6848 /* NGRequestTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGRequestTool.swift; sourceTree = "<group>"; };
+		5667FC85277FDE2600DE6848 /* GZHttpTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZHttpTool.swift; sourceTree = "<group>"; };
+		5667FC87277FDF7800DE6848 /* NGSingletonObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGSingletonObj.swift; sourceTree = "<group>"; };
+		5667FCAA277FE7B800DE6848 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5667FCAC277FE84500DE6848 /* NGOpaqueBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGOpaqueBarViewController.swift; sourceTree = "<group>"; };
+		5667FCAD277FE84C00DE6848 /* NGOpaqueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGOpaqueViewController.swift; sourceTree = "<group>"; };
+		5667FCAE277FE85200DE6848 /* NGBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGBaseViewController.swift; sourceTree = "<group>"; };
+		5667FCAF277FE85900DE6848 /* NGOpaqueNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGOpaqueNavigationController.swift; sourceTree = "<group>"; };
+		5667FCB4277FE95F00DE6848 /* XEBTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEBTabBarViewController.swift; sourceTree = "<group>"; };
+		5667FCB6277FE96C00DE6848 /* NGWKWebViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGWKWebViewVC.swift; sourceTree = "<group>"; };
+		5667FCB9277FEA0B00DE6848 /* UIButton+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CZAddition.h"; sourceTree = "<group>"; };
+		5667FCBA277FEA0B00DE6848 /* GZValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZValidate.h; sourceTree = "<group>"; };
+		5667FCBB277FEA0B00DE6848 /* NSString+CZHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZHash.h"; sourceTree = "<group>"; };
+		5667FCBC277FEA0B00DE6848 /* UIViewController+CZAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CZAddition.h"; sourceTree = "<group>"; };
+		5667FCBD277FEA0B00DE6848 /* NSCalendar+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+Extension.m"; sourceTree = "<group>"; };
+		5667FCBE277FEA0B00DE6848 /* UIPickerView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPickerView+Extension.m"; sourceTree = "<group>"; };
+		5667FCBF277FEA0B00DE6848 /* NSString+CZPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZPath.m"; sourceTree = "<group>"; };
+		5667FCC0277FEA0B00DE6848 /* NSAttributedString+CZAdditon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CZAdditon.h"; sourceTree = "<group>"; };
+		5667FCC1277FEA0B00DE6848 /* GZValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZValidate.m; sourceTree = "<group>"; };
+		5667FCC2277FEA0B00DE6848 /* UIButton+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CZAddition.m"; sourceTree = "<group>"; };
+		5667FCC3277FEA0B00DE6848 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
+		5667FCC4277FEA0B00DE6848 /* NSString+CZHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CZHash.m"; sourceTree = "<group>"; };
+		5667FCC5277FEA0B00DE6848 /* NSCalendar+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+Extension.h"; sourceTree = "<group>"; };
+		5667FCC6277FEA0B00DE6848 /* CZAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZAdditions.h; sourceTree = "<group>"; };
+		5667FCC7277FEA0B00DE6848 /* NSAttributedString+CZAdditon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CZAdditon.m"; sourceTree = "<group>"; };
+		5667FCC8277FEA0B00DE6848 /* NSString+CZPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CZPath.h"; sourceTree = "<group>"; };
+		5667FCC9277FEA0B00DE6848 /* UIPickerView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPickerView+Extension.h"; sourceTree = "<group>"; };
+		5667FCD7277FEADC00DE6848 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
+		5667FCD9277FEADC00DE6848 /* NGPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGPickerView.swift; sourceTree = "<group>"; };
+		56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NGCircleSlider.swift; path = CumstomView/NGCircleSlider.swift; sourceTree = SOURCE_ROOT; };
+		56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NGJsonModel.swift; path = Common/NGJsonModel.swift; sourceTree = SOURCE_ROOT; };
 		56ACF85D2AE6513E00B4C0F3 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		56ACF8612AE6513E00B4C0F3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		56ACF8632AE6513E00B4C0F3 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
@@ -127,13 +182,13 @@
 		5635F12B2AE642EC00D70E15 = {
 			isa = PBXGroup;
 			children = (
+				5667FCB8277FEA0B00DE6848 /* Additions */,
+				5667FC89277FE10300DE6848 /* CumstomView */,
+				5667FC7C277FDC0F00DE6848 /* Framework */,
+				5667FC77277FD93100DE6848 /* Base */,
 				56ACF8792AE658FC00B4C0F3 /* Common */,
 				56ACF85C2AE6513E00B4C0F3 /* Extensions */,
-				56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */,
-				56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */,
-				56ACF8332AE64E5D00B4C0F3 /* NGOpaqueNavigationController.swift */,
-				56ACF82F2AE64E5C00B4C0F3 /* NGRequestTool.swift */,
-				56ACF8372AE64E5E00B4C0F3 /* NGRequestURLList.swift */,
+				5667FC71277FD6AF00DE6848 /* SDENavigationDelegate.swift */,
 				5635F1362AE642ED00D70E15 /* NGTools */,
 				5635F14D2AE6438500D70E15 /* NGToolsTests */,
 				5635F1582AE6438600D70E15 /* NGToolsUITests */,
@@ -182,9 +237,85 @@
 			path = NGToolsUITests;
 			sourceTree = "<group>";
 		};
+		5667FC6E277FD65A00DE6848 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5667FC85277FDE2600DE6848 /* GZHttpTool.swift */,
+				5667FC83277FDDA400DE6848 /* NGRequestTool.swift */,
+				5667FC75277FD8D100DE6848 /* NGSQLiteManager.swift */,
+				5667FC6F277FD67400DE6848 /* XMLParserManager.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		5667FC77277FD93100DE6848 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5667FCB4277FE95F00DE6848 /* XEBTabBarViewController.swift */,
+				5667FCAA277FE7B800DE6848 /* BaseViewController.swift */,
+				5667FCAE277FE85200DE6848 /* NGBaseViewController.swift */,
+				5667FCAC277FE84500DE6848 /* NGOpaqueBarViewController.swift */,
+				5667FCAF277FE85900DE6848 /* NGOpaqueNavigationController.swift */,
+				5667FCAD277FE84C00DE6848 /* NGOpaqueViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5667FC7C277FDC0F00DE6848 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		5667FC89277FE10300DE6848 /* CumstomView */ = {
+			isa = PBXGroup;
+			children = (
+				5667FCD4277FEADC00DE6848 /* PickerView */,
+				5667FCB6277FE96C00DE6848 /* NGWKWebViewVC.swift */,
+				5667FC73277FD6FB00DE6848 /* LoopBannerView.swift */,
+				56ACF8342AE64E5D00B4C0F3 /* NGCircleSlider.swift */,
+			);
+			path = CumstomView;
+			sourceTree = "<group>";
+		};
+		5667FCB8277FEA0B00DE6848 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				5667FCB9277FEA0B00DE6848 /* UIButton+CZAddition.h */,
+				5667FCBA277FEA0B00DE6848 /* GZValidate.h */,
+				5667FCBB277FEA0B00DE6848 /* NSString+CZHash.h */,
+				5667FCBC277FEA0B00DE6848 /* UIViewController+CZAddition.h */,
+				5667FCBD277FEA0B00DE6848 /* NSCalendar+Extension.m */,
+				5667FCBE277FEA0B00DE6848 /* UIPickerView+Extension.m */,
+				5667FCBF277FEA0B00DE6848 /* NSString+CZPath.m */,
+				5667FCC0277FEA0B00DE6848 /* NSAttributedString+CZAdditon.h */,
+				5667FCC1277FEA0B00DE6848 /* GZValidate.m */,
+				5667FCC2277FEA0B00DE6848 /* UIButton+CZAddition.m */,
+				5667FCC3277FEA0B00DE6848 /* UIViewController+CZAddition.m */,
+				5667FCC4277FEA0B00DE6848 /* NSString+CZHash.m */,
+				5667FCC5277FEA0B00DE6848 /* NSCalendar+Extension.h */,
+				5667FCC6277FEA0B00DE6848 /* CZAdditions.h */,
+				5667FCC7277FEA0B00DE6848 /* NSAttributedString+CZAdditon.m */,
+				5667FCC8277FEA0B00DE6848 /* NSString+CZPath.h */,
+				5667FCC9277FEA0B00DE6848 /* UIPickerView+Extension.h */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		5667FCD4277FEADC00DE6848 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				5667FCD7277FEADC00DE6848 /* CityList.json */,
+				5667FCD9277FEADC00DE6848 /* NGPickerView.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		56ACF85C2AE6513E00B4C0F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5667FC6A277FD40200DE6848 /* Control+Extensions.swift */,
 				56ACF88A2AE66DA200B4C0F3 /* URL+Extention.swift */,
 				56ACF8882AE66D1000B4C0F3 /* NSMutableAttributedString+Extensions.swift */,
 				56ACF8752AE6573F00B4C0F3 /* String+Extensions.swift */,
@@ -199,6 +330,7 @@
 				56ACF8682AE6513E00B4C0F3 /* Date+Extensions.swift */,
 				56ACF8842AE65B6800B4C0F3 /* UIImage+Extensions.swift */,
 				56ACF8852AE65B6900B4C0F3 /* UIView+Extensions.swift */,
+				5667FC7A277FD9AD00DE6848 /* DispatchQueue+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,12 +338,15 @@
 		56ACF8792AE658FC00B4C0F3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5667FC6E277FD65A00DE6848 /* Tools */,
 				56ACF87D2AE6592400B4C0F3 /* GZCommon.swift */,
+				5667FC87277FDF7800DE6848 /* NGSingletonObj.swift */,
 				56ACF87B2AE6592300B4C0F3 /* GZLoanBtn.swift */,
 				56ACF87C2AE6592300B4C0F3 /* XEBControl.swift */,
 				56ACF87E2AE6592400B4C0F3 /* XEBDefineHelper.swift */,
 				56ACF87A2AE6592300B4C0F3 /* XEBHelper.swift */,
 				56ACF88C2AE6717500B4C0F3 /* NGCommon.swift */,
+				56ACF8382AE64E5E00B4C0F3 /* NGJsonModel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -320,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5667FCDE277FEAE200DE6848 /* CityList.json in Resources */,
 				5635F1442AE6437900D70E15 /* LaunchScreen.storyboard in Resources */,
 				5635F1412AE6437800D70E15 /* Assets.xcassets in Resources */,
 			);
@@ -348,30 +484,52 @@
 			files = (
 				56ACF8782AE657F900B4C0F3 /* UIButton+Extensions.swift in Sources */,
 				56ACF8732AE6513E00B4C0F3 /* Bundle+Extensions.swift in Sources */,
+				5667FCB5277FE96000DE6848 /* XEBTabBarViewController.swift in Sources */,
+				5667FCB0277FE85A00DE6848 /* NGOpaqueBarViewController.swift in Sources */,
+				5667FCB1277FE85A00DE6848 /* NGOpaqueViewController.swift in Sources */,
 				56ACF8862AE65B6900B4C0F3 /* UIImage+Extensions.swift in Sources */,
 				56ACF8832AE6592400B4C0F3 /* XEBDefineHelper.swift in Sources */,
+				5667FC88277FDF7800DE6848 /* NGSingletonObj.swift in Sources */,
+				5667FCCE277FEA0B00DE6848 /* UIButton+CZAddition.m in Sources */,
 				56ACF8702AE6513E00B4C0F3 /* UIBarButtonItem+Extensions.swift in Sources */,
+				5667FCCC277FEA0B00DE6848 /* NSString+CZPath.m in Sources */,
 				56ACF8812AE6592400B4C0F3 /* XEBControl.swift in Sources */,
 				5635F13C2AE642EE00D70E15 /* ViewController.swift in Sources */,
 				56ACF8762AE6573F00B4C0F3 /* String+Extensions.swift in Sources */,
 				56ACF8892AE66D1000B4C0F3 /* NSMutableAttributedString+Extensions.swift in Sources */,
+				5667FC86277FDE2600DE6848 /* GZHttpTool.swift in Sources */,
+				5667FCD1277FEA0B00DE6848 /* NSAttributedString+CZAdditon.m in Sources */,
+				5667FCD0277FEA0B00DE6848 /* NSString+CZHash.m in Sources */,
 				56ACF8822AE6592400B4C0F3 /* GZCommon.swift in Sources */,
+				5667FC84277FDDA400DE6848 /* NGRequestTool.swift in Sources */,
 				5635F1382AE642ED00D70E15 /* AppDelegate.swift in Sources */,
-				56ACF84F2AE64E5F00B4C0F3 /* NGRequestTool.swift in Sources */,
 				56ACF86D2AE6513E00B4C0F3 /* UIColor+Extensions.swift in Sources */,
 				56ACF8582AE64E5F00B4C0F3 /* NGJsonModel.swift in Sources */,
 				56ACF88B2AE66DA200B4C0F3 /* URL+Extention.swift in Sources */,
+				5667FC70277FD67400DE6848 /* XMLParserManager.swift in Sources */,
+				5667FCB3277FE85A00DE6848 /* NGOpaqueNavigationController.swift in Sources */,
+				5667FCB7277FE96C00DE6848 /* NGWKWebViewVC.swift in Sources */,
+				5667FC72277FD6AF00DE6848 /* SDENavigationDelegate.swift in Sources */,
+				5667FCCA277FEA0B00DE6848 /* NSCalendar+Extension.m in Sources */,
+				5667FCCF277FEA0B00DE6848 /* UIViewController+CZAddition.m in Sources */,
 				56ACF86F2AE6513E00B4C0F3 /* NSObject+Extensions.swift in Sources */,
-				56ACF8532AE64E5F00B4C0F3 /* NGOpaqueNavigationController.swift in Sources */,
+				5667FCCB277FEA0B00DE6848 /* UIPickerView+Extension.m in Sources */,
 				5635F13A2AE642ED00D70E15 /* SceneDelegate.swift in Sources */,
+				5667FCAB277FE7B800DE6848 /* BaseViewController.swift in Sources */,
 				56ACF8742AE6513E00B4C0F3 /* Date+Extensions.swift in Sources */,
+				5667FCCD277FEA0B00DE6848 /* GZValidate.m in Sources */,
 				56ACF8872AE65B6900B4C0F3 /* UIView+Extensions.swift in Sources */,
+				5667FCB2277FE85A00DE6848 /* NGBaseViewController.swift in Sources */,
+				5667FC7B277FD9AD00DE6848 /* DispatchQueue+Extensions.swift in Sources */,
+				5667FCE0277FEAE200DE6848 /* NGPickerView.swift in Sources */,
 				56ACF8692AE6513E00B4C0F3 /* Array+Extensions.swift in Sources */,
 				56ACF8542AE64E5F00B4C0F3 /* NGCircleSlider.swift in Sources */,
+				5667FC6B277FD40200DE6848 /* Control+Extensions.swift in Sources */,
 				56ACF8712AE6513E00B4C0F3 /* UIImageView+WebImage.swift in Sources */,
+				5667FC74277FD6FB00DE6848 /* LoopBannerView.swift in Sources */,
 				56ACF8802AE6592400B4C0F3 /* GZLoanBtn.swift in Sources */,
 				56ACF87F2AE6592400B4C0F3 /* XEBHelper.swift in Sources */,
-				56ACF8572AE64E5F00B4C0F3 /* NGRequestURLList.swift in Sources */,
+				5667FC76277FD8D100DE6848 /* NGSQLiteManager.swift in Sources */,
 				56ACF8722AE6513E00B4C0F3 /* NotificationCenter+Extensions.swift in Sources */,
 				56ACF88D2AE6717500B4C0F3 /* NGCommon.swift in Sources */,
 			);
@@ -539,6 +697,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = NGTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -556,6 +718,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = NGTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
